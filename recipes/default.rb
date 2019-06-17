@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-include 'SimpleLogstashCookbook::LogstashConfig'
+
 
 user 'logstash user' do
   username node['logstash']['user']
