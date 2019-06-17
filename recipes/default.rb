@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+Chef::Resource::User.send(:include, SimpleLogstashCookbook::LogstashConfig)
 
 user 'logstash user' do
   username node['logstash']['user']
