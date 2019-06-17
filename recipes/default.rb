@@ -28,7 +28,3 @@ ark 'logstash' do
   prefix_root node['logstash']['prefix_root']
   prefix_home node['logstash']['prefix_root']
 end
-
-template '/etc/logstash/logstash-simple.conf' do
-  source 'logstash_config.rb'
-end
