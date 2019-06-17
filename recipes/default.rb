@@ -29,10 +29,10 @@ ark 'logstash' do
   prefix_home node['logstash']['prefix_root']
 end
 
-template '/home/ubuntu/test.log' do
+template '/home/test.log' do
   source 'test.log'
 end
 
-template '/home/ubuntu/trial.conf' do
+template '/home/trial.conf' do
   source 'trial.conf'
 end
