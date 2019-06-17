@@ -20,7 +20,7 @@ module SimpleLogstashCookbook
     property :template_variables, Hash, default: {}, desired_state: true
 
     default_action :create
-    allowed_actions :create
+    allowed_actions :create, :delete
 
     def default_config_name
       "#{name}.conf"
@@ -66,6 +66,8 @@ module SimpleLogstashCookbook
       conf_file.action += [:create]
     end
 
-    
+    action :delete do
+      conf_file.action += [:delete]
+    end
   end
 end
