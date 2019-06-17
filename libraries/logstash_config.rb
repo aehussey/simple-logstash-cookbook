@@ -4,18 +4,18 @@ module SimpleLogstashCookbook
   class LogstashConfig < Chef::Resource
     resource_name :logstash_config
 
-    property :user, String, default: 'logstash', desired_state: false
-    property :group, String, default: 'logstash', desired_state: false
+    property :user, String, default: 'logstash', desired_state: true
+    property :group, String, default: 'logstash', desired_state: true
 
-    property :prefix_conf, String, default: '/etc', desired_state: false
-    property :service, String, default: 'logstash', desired_state: false
+    property :prefix_conf, String, default: '/etc', desired_state: true
+    property :service, String, default: 'logstash', desired_state: true
 
-    property :config_dir, String, default: 'conf.d', desired_state: false
-    property :config_name, String, default: lazy { default_config_name }, desired_state: false
+    property :config_dir, String, default: 'conf.d', desired_state: true
+    property :config_name, String, default: lazy { default_config_name }, desired_state: true
 
-    property :template_source, String, default: lazy { default_template_source }, desired_state: false
-    property :template_mode, String, default: '0640', desired_state: false
-    property :template_variables, Hash, default: {}, desired_state: false
+    property :template_source, String, default: lazy { default_template_source }, desired_state: true
+    property :template_mode, String, default: '0640', desired_state: true
+    property :template_variables, Hash, default: {}, desired_state: true
 
     default_action :create
     allowed_actions :create, :delete
