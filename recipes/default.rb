@@ -29,6 +29,10 @@ ark 'logstash' do
   prefix_home node['logstash']['prefix_root']
 end
 
+bash '' do
+  code 'sudo apt-get -y install logstash'
+end
+
 template '/home/test.log' do
   source 'test.log'
 end
