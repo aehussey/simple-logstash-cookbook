@@ -23,7 +23,7 @@ ark 'logstash' do
   group node['logstash']['group']
   version node['logstash']['version']
   has_binaries ['bin/logstash']
-  checksum node['logstash']['checksum']
+
 
   prefix_root node['logstash']['prefix_root']
   prefix_home node['logstash']['prefix_root']
