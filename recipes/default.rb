@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-Chef::Resource::User.send(:include, SimpleLogstashCookbook::LogstashConfig)
+
 
 user 'logstash user' do
   username node['logstash']['user']
@@ -27,4 +27,8 @@ ark 'logstash' do
 
   prefix_root node['logstash']['prefix_root']
   prefix_home node['logstash']['prefix_root']
+end
+
+template '/etc/logstash/logstash-simple.conf' do
+  source 'logstash_config.rb'
 end
