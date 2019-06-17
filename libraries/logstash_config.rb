@@ -2,6 +2,13 @@
 
 module SimpleLogstashCookbook
   class LogstashConfig < Chef::Resource
+
+    input { stdin { } }
+output {
+  elasticsearch { hosts => ["localhost:9200"] }
+  stdout { codec => rubydebug }
+}
+
     resource_name :logstash_config
 
     property :user, String, default: 'logstash', desired_state: false
